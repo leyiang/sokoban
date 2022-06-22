@@ -7,6 +7,23 @@ export default class Character {
         this.y = 5;
     }
 
+    init() {
+        game.keyboard.bind(["ArrowUp", "k"], () => {
+            this.y --;
+        });
+
+        game.keyboard.bind(["ArrowDown", "j"], () => {
+            this.y ++;
+        });
+
+        game.keyboard.bind(["ArrowLeft", "h"], () => {
+            this.x --;
+        });
+        game.keyboard.bind(["ArrowRight", "l"], () => {
+            this.x ++;
+        });
+    }
+
     render( c, view ) {
         const cell = config.cell;
 
@@ -20,11 +37,11 @@ export default class Character {
 
         path(c, () => {
             if( config.dev ) {
-                path(c, () => {
-                    c.globalAlpha = .5;
-                    c.rect( centerX, centerY, w, h )
-                    c.fill();
-                });
+                // path(c, () => {
+                //     c.globalAlpha = .5;
+                //     c.rect( centerX, centerY, w, h )
+                //     c.fill();
+                // });
             }
 
             view.draw(

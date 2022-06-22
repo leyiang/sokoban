@@ -1,8 +1,10 @@
 import Character from "./Character.js";
+import Keyboard from "./Keyboard.js";
 
 export default class Game {
     constructor() {
         this.player = new Character();
+        this.keyboard = new Keyboard;
     }
 
     update() {
@@ -10,6 +12,7 @@ export default class Game {
     }
 
     init() {
-
+        this.player.init();
+        this.keyboard.listen();
     }
 }
