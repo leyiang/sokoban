@@ -8,8 +8,8 @@ export default function backgroundLayer() {
         buffer.width = c.canvas.width;
         buffer.height = c.canvas.height;
 
-        for (let y = 0; y < config.row; y++) {
-            for (let x = 0; x < config.col; x++) {
+        for (let y = 0; y < game.row; y++) {
+            for (let x = 0; x < game.col; x++) {
                 let tileName = "grass";
                 let xName = null, yName = null;
 
@@ -17,7 +17,7 @@ export default function backgroundLayer() {
                     xName = "left";
                 }
 
-                if( x === config.col - 1 ) {
+                if( x === game.col - 1 ) {
                     xName = "right";
                 }
 
@@ -25,7 +25,7 @@ export default function backgroundLayer() {
                     yName = "top";
                 }
 
-                if( y === config.row - 1 ) {
+                if( y === game.row - 1 ) {
                     yName = "bottom";
                 }
 

@@ -34,7 +34,7 @@ export default class Player {
         let newX = this.x + xDir;
         let newY = this.y + yDir;
 
-        if( game.validPosition(newX, newY) ) {
+        if( game.grid.validPosition(newX, newY) ) {
             this.x = newX;
             this.y = newY;
         }
@@ -48,8 +48,9 @@ export default class Player {
         const x = this.x * cell;
         const y = this.y * cell;
 
+        const offset = 0;
         const centerX = x - w/2 + cell/2;
-        const centerY = y - h/2 + cell/2;
+        const centerY = y - h/2 + cell/2 - offset;
 
         path(c, () => {
             if( config.dev ) {
@@ -69,3 +70,4 @@ export default class Player {
         })
     }
 }
+

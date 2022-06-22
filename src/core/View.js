@@ -13,8 +13,9 @@ export default class View {
 
     init( game, sprites_info, images ) {
         this.game = game;
-        const w = config.col * config.cell;
-        const h = config.row * config.cell;
+
+        const w = game.col * config.cell;
+        const h = game.row * config.cell;
 
         this.canvas.width = w;
         this.canvas.height = h;
