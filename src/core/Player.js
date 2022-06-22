@@ -5,22 +5,27 @@ export default class Player {
     constructor() {
         this.x = 5;
         this.y = 5;
+        this.posture = "down";
     }
 
     init() {
         game.keyboard.bind(["ArrowUp", "k", "w"], () => {
+            this.posture = "up";
             this.move(0, -1);
         });
 
         game.keyboard.bind(["ArrowDown", "j", "s"], () => {
+            this.posture = "down";
             this.move(0, 1);
         });
 
         game.keyboard.bind(["ArrowLeft", "h", "a"], () => {
+            this.posture = "left";
             this.move(-1, 0);
         });
 
         game.keyboard.bind(["ArrowRight", "l", "d"], () => {
+            this.posture = "right";
             this.move(1, 0);
         });
     }
@@ -56,7 +61,7 @@ export default class Player {
             }
 
             view.draw(
-                "down_1",
+                `${ this.posture }_1`,
                 "character",
                 c,
                 centerX, centerY, w, h
