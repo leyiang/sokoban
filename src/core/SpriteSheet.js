@@ -20,14 +20,7 @@ export default class SpriteSheet {
         this.sprites.set( name, canvas );
     }
 
-    draw( tileName, context, x, y, w, h ) {
-        const buffer = this.sprites.get( tileName );
-
-        if( buffer instanceof HTMLCanvasElement ) {
-            context.drawImage(
-                buffer,
-                x, y, w, h
-            );
-        }
+    get( name ) {
+        return this.sprites.get( name ) || null;
     }
 }
