@@ -1,25 +1,25 @@
 import SpriteSheet from "./SpriteSheet.js";
 import layers from "../js/layers/layers.js";
 import config from "../js/config.js";
-import { path } from "./utils.js";
 
 export default class View {
-    constructor( game, canvas ) {
+    constructor( canvas ) {
         this.canvas = canvas;
         this.context = canvas.getContext("2d");
 
-        this.game = game;
         this.layers = layers;
         this.sprites = new Map;
-        this.initCanvas();
     }
 
-    initCanvas() {
+    init( game, sprites_info, images ) {
+        this.game = game;
         const w = config.col * config.cell;
         const h = config.row * config.cell;
 
         this.canvas.width = w;
         this.canvas.height = h;
+
+        this.initSprites( sprites_info, images );
     }
 
     initSprites( sprite_info_list, images ) {
