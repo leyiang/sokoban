@@ -1,7 +1,7 @@
 import View from "./core/View.js";
 import sprites_info from "./js/sprites_info.js";
 import Game from "./core/Game.js";
-import ResourceLoader from "./core/ResourceLoader.js";
+import ResourceLoader from "./core/shared/ResourceLoader.js";
 import config from "./js/config.js";
 
 const loader = new ResourceLoader();

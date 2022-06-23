@@ -1,4 +1,4 @@
-import SpriteSheet from "./SpriteSheet.js";
+import SpriteSheet from "./shared/SpriteSheet.js";
 import layers from "../js/layers/layers.js";
 import config from "../js/config.js";
 

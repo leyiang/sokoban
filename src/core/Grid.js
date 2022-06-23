@@ -1,4 +1,4 @@
-import Cell from "./Cell.js";
+import Cell from "./model/Cell.js";
 
 export default class Grid {
     constructor(row, col, map) {
@@ -8,23 +8,16 @@ export default class Grid {
 
         for (let y = 0; y < row; y++) {
             for (let x = 0; x < col; x++) {
-                this.cells.push(new Cell(x, y, map[y][x]));
+                const cell = new Cell(x, y, map[y][x] );
+                this.cells.push( cell );
             }
         }
     }
 
-    validPosition(x, y) {
-        if (x < 0) return false;
-        if (y < 0) return false;
-        if (x > this.col - 1) return false;
-        if (y > this.row - 1) return false;
+    get(x, y) {
+        if( x < 0 || x >= this.col ) return null;
+        if( y < 0 || y >= this.row ) return null;
 
-        const cell = this.cells[y * this.col + x]
-
-        if( cell.type == Cell.WALL ) {
-            return false;
-        }
-
-        return true;
+        return this.cells[ y * this.col + x ] || null;
     }
 }

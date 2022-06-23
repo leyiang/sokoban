@@ -1,4 +1,4 @@
-import config from "../js/config.js";
+import config from "../../js/config.js";
 
 export function loadImage( src ) {
     return new Promise(resolve => {

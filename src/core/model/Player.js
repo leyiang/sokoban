@@ -1,5 +1,5 @@
-import config from "../js/config.js";
-import { path } from "./utils.js";
+import config from "../../js/config.js";
+import { path } from "../shared/utils.js";
 
 export default class Player {
     constructor() {
@@ -34,7 +34,7 @@ export default class Player {
         let newX = this.x + xDir;
         let newY = this.y + yDir;
 
-        if( game.grid.validPosition(newX, newY) ) {
+        if( game.validPosition(newX, newY, xDir, yDir ) ) {
             this.x = newX;
             this.y = newY;
         }

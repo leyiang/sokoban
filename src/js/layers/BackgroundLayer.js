@@ -1,5 +1,5 @@
 import config from "../config.js";
-import { path } from "../../core/utils.js";
+import { path } from "../../core/shared/utils.js";
 
 export default function backgroundLayer() {
     return function( c, view ) {

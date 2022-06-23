@@ -1,4 +1,4 @@
-import sprites_info from "../js/sprites_info.js";
+import sprites_info from "../../js/sprites_info.js";
 import { loadImage } from "./utils.js";
 
 export default class ResourceLoader {

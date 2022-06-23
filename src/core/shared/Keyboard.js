@@ -1,4 +1,4 @@
-import config from "../js/config.js";
+import config from "../../js/config.js";
 import { devLog } from "./utils.js";
 
 export default class Keyboard {
