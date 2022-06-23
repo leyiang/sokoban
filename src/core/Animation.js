@@ -7,7 +7,7 @@ export default class Animation {
         setInterval(() => {
             this.index ++;
 
-            if( this.index >= 3 ) {
+            if( this.index > 2 ) {
                 this.index = 1;
             }
         }, 300 )

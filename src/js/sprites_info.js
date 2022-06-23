@@ -1,7 +1,7 @@
 export default [
     {
         name: "grass",
-        img: "/assets/grass.png",
+        img: "/assets/images/grass.png",
 
         cell: {
             w: 16,
@@ -9,7 +9,10 @@ export default [
         },
 
         info: [
-            { name: "grass", x: 0, y: 0 },
+            { name: "grass_1", x: 2, y: 0 },
+            { name: "grass_2", x: 1, y: 0 },
+            { name: "grass_3", x: 5, y: 0 },
+
             { name: "grass_top", x: 2, y: 3 },
             { name: "grass_bottom", x: 2, y: 5 },
             { name: "grass_left", x: 1, y: 4 },
@@ -23,7 +26,7 @@ export default [
 
     {
         name: "character",
-        img: "/assets/character.png",
+        img: "/assets/images/character.png",
 
         cell: {
             w: 48,
@@ -56,7 +59,7 @@ export default [
     {
 
         name: "things",
-        img: "/assets/things.png",
+        img: "/assets/images/things.png",
 
         cell: {
             w: 16,

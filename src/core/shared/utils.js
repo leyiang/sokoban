@@ -34,3 +34,7 @@ export function getCentered(ix, iy, cw, ch, scale=1) {
 
     return [ centerX, centerY, w, h ];
 }
+
+export function random(min = 0, max=10) {
+    return Math.floor( Math.random() * (max - min) ) + min;
+}

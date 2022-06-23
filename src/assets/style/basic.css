@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "04B_03";
+    src: url("/assets/fonts/04B_03.TTF");
+}
+
+canvas {
+    image-rendering: pixelated;
+}
+
+body {
+    background: url("/assets/images/Tilesets/Water.png");
+    background-size: 20%;
+    image-rendering: pixelated;
+
+    font-family: "04B_03",serif;
+    animation: backgroundAnimation 30s forwards linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    from {
+        background-position-x: 0;
+    }
+
+    to {
+        background-position-x: 100%;
+    }
+}

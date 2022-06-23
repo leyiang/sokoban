@@ -1,5 +1,5 @@
 import config from "../config.js";
-import { path } from "../../core/shared/utils.js";
+import { path, random } from "../../core/shared/utils.js";
 
 export default function backgroundLayer() {
     let buffer = null;
@@ -48,6 +48,11 @@ export default function backgroundLayer() {
                         //     bufferContext.rect(x * config.cell, y * config.cell, config.cell, config.cell);
                         //     bufferContext.stroke();
                         // }
+
+                        if( tileName === "grass" ) {
+                            const index = random(1, 3);
+                            tileName += ("_" + index);
+                        }
 
                         view.drawCell( tileName, "grass", bufferContext, x, y );
                     });
