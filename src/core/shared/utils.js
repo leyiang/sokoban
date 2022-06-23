@@ -1,6 +1,7 @@
 import config from "../../js/config.js";
 
 export function loadImage( src ) {
+    console.log( src );
     return new Promise(resolve => {
         const image = new Image();
         image.addEventListener("load", () => resolve(image) );
