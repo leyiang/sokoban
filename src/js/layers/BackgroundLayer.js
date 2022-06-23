@@ -8,7 +8,6 @@ export default function backgroundLayer() {
         if( ! buffer ) {
             buffer = document.createElement("canvas");
             const bufferContext = buffer.getContext("2d");
-            bufferContext.imageSmoothingEnabled = false;
 
             buffer.width = c.canvas.width;
             buffer.height = c.canvas.height;

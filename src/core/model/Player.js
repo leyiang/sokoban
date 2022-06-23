@@ -1,31 +1,32 @@
 import config from "../../js/config.js";
 import { getCentered, path } from "../shared/utils.js";
+import Animation from "../Animation.js";
 
 export default class Player {
     constructor() {
         this.x = 5;
         this.y = 5;
-        this.posture = "down";
+        this.animation = new Animation("character", "down");
     }
 
     init() {
         game.keyboard.bind(["ArrowUp", "k", "w"], () => {
-            this.posture = "up";
+            this.animation.setState("up");
             this.move(0, -1);
         });
 
         game.keyboard.bind(["ArrowDown", "j", "s"], () => {
-            this.posture = "down";
+            this.animation.setState("down");
             this.move(0, 1);
         });
 
         game.keyboard.bind(["ArrowLeft", "h", "a"], () => {
-            this.posture = "left";
+            this.animation.setState("left");
             this.move(-1, 0);
         });
 
         game.keyboard.bind(["ArrowRight", "l", "d"], () => {
-            this.posture = "right";
+            this.animation.setState("right");
             this.move(1, 0);
         });
     }
@@ -54,12 +55,7 @@ export default class Player {
                 // });
             }
 
-            view.draw(
-                `${ this.posture }_1`,
-                "character",
-                c,
-                centerX, centerY, w, h
-            );
+            this.animation.render(c, view, centerX, centerY, w, h );
         })
     }
 }

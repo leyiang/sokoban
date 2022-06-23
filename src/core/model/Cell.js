@@ -20,6 +20,11 @@ export default class Cell {
             this.type === Cell.TARGET ||
             this.type === Cell.CARGO_ON_TARGET
         );
+
+        if( type === Cell.KEEPER ) {
+            game.player.x = this.x;
+            game.player.y = this.y;
+        }
     }
 
     get key() {

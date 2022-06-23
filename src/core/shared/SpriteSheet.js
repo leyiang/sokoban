@@ -8,8 +8,6 @@ export default class SpriteSheet {
         const canvas = document.createElement("canvas");
         const c = canvas.getContext("2d");
 
-        c.imageSmoothingEnabled = false;
-
         canvas.width = w;
         canvas.height = h;
 
