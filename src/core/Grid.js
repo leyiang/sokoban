@@ -20,4 +20,13 @@ export default class Grid {
 
         return this.cells[ y * this.col + x ] || null;
     }
+
+    getNeighbours(x, y) {
+        return [
+            [x, y - 1],
+            [x + 1, y],
+            [x, y + 1],
+            [x - 1, y],
+        ].map( index => this.get(index[0], index[1]) );
+    }
 }

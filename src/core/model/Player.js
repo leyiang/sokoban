@@ -1,5 +1,5 @@
 import config from "../../js/config.js";
-import { path } from "../shared/utils.js";
+import { getCentered, path } from "../shared/utils.js";
 
 export default class Player {
     constructor() {
@@ -43,14 +43,7 @@ export default class Player {
     render( c, view ) {
         const cell = config.cell;
 
-        const w = cell * 2;
-        const h = cell * 2;
-        const x = this.x * cell;
-        const y = this.y * cell;
-
-        const offset = 0;
-        const centerX = x - w/2 + cell/2;
-        const centerY = y - h/2 + cell/2 - offset;
+        const [ centerX, centerY, w, h ] = getCentered(this.x, this.y, cell, cell, 2);
 
         path(c, () => {
             if( config.dev ) {

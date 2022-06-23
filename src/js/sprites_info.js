@@ -9,15 +9,15 @@ export default [
         },
 
         info: [
-            {name: "grass", x: 0, y: 0},
-            {name: "grass_top", x: 2, y: 3},
-            {name: "grass_bottom", x: 2, y: 5},
-            {name: "grass_left", x: 1, y: 4},
-            {name: "grass_right", x: 3, y: 4},
-            {name: "grass_top_left", x: 1, y: 3},
-            {name: "grass_top_right", x: 3, y: 3},
-            {name: "grass_bottom_right", x: 3, y: 5},
-            {name: "grass_bottom_left", x: 1, y: 5},
+            { name: "grass", x: 0, y: 0 },
+            { name: "grass_top", x: 2, y: 3 },
+            { name: "grass_bottom", x: 2, y: 5 },
+            { name: "grass_left", x: 1, y: 4 },
+            { name: "grass_right", x: 3, y: 4 },
+            { name: "grass_top_left", x: 1, y: 3 },
+            { name: "grass_top_right", x: 3, y: 3 },
+            { name: "grass_bottom_right", x: 3, y: 5 },
+            { name: "grass_bottom_left", x: 1, y: 5 },
         ]
     },
 
@@ -50,6 +50,24 @@ export default [
             { name: "right_2", x: 1, y: 3 },
             { name: "right_3", x: 2, y: 3 },
             { name: "right_4", x: 3, y: 3 },
+        ]
+    },
+
+    {
+
+        name: "things",
+        img: "/assets/things.png",
+
+        cell: {
+            w: 16,
+            h: 16
+        },
+
+        info: [
+            { name: "stone", x: 8, y: 1 },
+            { name: "apple", x: 0, y: 2 },
+            { name: "box", x: 1, y: 3 },
+            { name: "box_target", x: 0, y: 3 },
         ]
     }
 ]

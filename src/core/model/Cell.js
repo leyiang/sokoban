@@ -1,5 +1,5 @@
 import config from "../../js/config.js";
-import { path } from "../shared/utils.js";
+import { getCentered, path } from "../shared/utils.js";
 
 export default class Cell {
     static EMPTY = 0;
@@ -14,6 +14,7 @@ export default class Cell {
         this.x = x;
         this.y = y;
         this.type = type;
+        this.neighbours = null;
 
         this.is_target = (
             this.type === Cell.TARGET ||
@@ -25,19 +26,28 @@ export default class Cell {
        return this.x + "_" + this.y;
     }
 
-    render( c ) {
+    getNeighbours() {
+        if( this.neighbours !== null ) {
+            return this.neighbours;
+        } else {
+            return this.neighbours = game.grid.getNeighbours( this.x, this.y );
+        }
+    }
+
+    render( c, view ) {
         const cell = config.cell;
         const x = this.x * cell;
         const y = this.y * cell;
 
         path(c, () => {
             if( this.type === Cell.WALL ) {
-                c.fillRect(x, y, cell, cell);
+                const [cx, cy, w, h] = getCentered(this.x, this.y, cell, cell, .6);
+                view.draw("stone", "things", c, cx, cy, w, h );
             }
 
             if( this.is_target ) {
-                c.fillStyle = "pink";
-                c.fillRect(x, y, cell, cell);
+                const [cx, cy, w, h] = getCentered(this.x, this.y, cell, cell, .6);
+                view.draw("apple", "things", c, cx, cy, w, h );
             }
         });
     }

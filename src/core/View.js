@@ -6,6 +6,7 @@ export default class View {
     constructor( canvas ) {
         this.canvas = canvas;
         this.context = canvas.getContext("2d");
+        this.context.imageSmoothingEnabled = false;
 
         this.layers = layers;
         this.sprites = new Map;
@@ -52,6 +53,7 @@ export default class View {
         const buffer = sprite?.get( tileName );
 
         if( buffer instanceof HTMLCanvasElement ) {
+            context.imageSmoothingEnabled = false;
             context.drawImage(
                 buffer,
                 x, y, w, h
