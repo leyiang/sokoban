@@ -24,7 +24,13 @@ export default class Keyboard {
         document.addEventListener("keydown", e => {
             devLog("Keyboard.js", e.key);
 
-            const callback = this.keymaps.get( e.key );
+            let key = e.key;
+
+            if( e.altKey ) {
+                key = "alt_" + key
+            }
+
+            const callback = this.keymaps.get( key );
 
             if( typeof callback === "function" ) {
                 e.preventDefault();

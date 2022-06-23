@@ -9,7 +9,7 @@ export default class Game {
     constructor() {
         this.player = new Player();
         this.keyboard = new Keyboard;
-        this.map = maps[2];
+        this.map = maps[0];
         this.row = this.map.length;
         this.col = this.map[0].length;
         this.boxes = new Map();
