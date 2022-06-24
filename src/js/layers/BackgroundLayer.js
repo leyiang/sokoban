@@ -1,10 +1,14 @@
-import config from "../config.js";
-import { path, random } from "../../core/shared/utils.js";
+import { path, random } from "@/core/shared/utils.js";
 
 export default function backgroundLayer() {
     let buffer = null;
 
     return function( c, view ) {
+        if( view.updateBackgroundLayer ) {
+            buffer = null;
+            view.updateBackgroundLayer = false;
+        }
+
         if( ! buffer ) {
             buffer = document.createElement("canvas");
             const bufferContext = buffer.getContext("2d");

@@ -9,9 +9,7 @@ export default class Game {
     constructor() {
         this.player = new Player();
         this.keyboard = new Keyboard;
-        this.map = maps[0];
-        this.row = this.map.length;
-        this.col = this.map[0].length;
+        this.level = 0;
         this.boxes = new Map();
         this.box_len = 0;
     }
@@ -28,7 +26,16 @@ export default class Game {
          * Init Grid
          * @type {Grid}
          */
+        this.initLevel();
+    }
+
+    initLevel() {
+        this.map = maps[ this.level ];
+        this.row = this.map.length;
+        this.col = this.map[0].length;
+
         this.grid = new Grid( this.row, this.col, this.map );
+        this.boxes = new Map;
 
         this.map.forEach( (row, y) => {
             row.forEach( (type, x) => {
@@ -84,5 +91,12 @@ export default class Game {
         this.boxes.delete( box.key );
         box.move(xDir, yDir);
         this.boxes.set( box.key, box );
+    }
+
+    nextLevel() {
+        if( this.level + 1 < maps.length ) {
+            this.level ++;
+            this.initLevel();
+        }
     }
 }

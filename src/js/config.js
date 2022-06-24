@@ -1,4 +1,4 @@
 export default {
     dev: true,
-    cell: 80,
+    cell: 64,
 }

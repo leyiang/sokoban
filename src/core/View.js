@@ -14,13 +14,21 @@ export default class View {
     init( game, sprites_info, images ) {
         this.game = game;
 
-        const w = game.col * config.cell;
-        const h = game.row * config.cell;
+        this.updateCanvasSize();
+        this.initSprites( sprites_info, images );
+    }
+
+    /**
+     * Game Level change results to the size of canvas
+     */
+    updateCanvasSize() {
+        const w = this.game.col * config.cell;
+        const h = this.game.row * config.cell;
 
         this.canvas.width = w;
         this.canvas.height = h;
 
-        this.initSprites( sprites_info, images );
+        this.updateBackgroundLayer = true;
     }
 
     initSprites( sprite_info_list, images ) {
