@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 @font-face {
     font-family: "04B_03";
     src: url("/assets/fonts/04B_03.TTF");
@@ -9,11 +14,11 @@ canvas {
 
 body {
     background: url("/assets/images/Tilesets/Water.png");
-    background-size: 20%;
+    background-size: 500px;
     image-rendering: pixelated;
 
     font-family: "04B_03",serif;
-    animation: backgroundAnimation 30s forwards linear infinite;
+    animation: backgroundAnimation 10s forwards linear infinite;
 }
 
 @keyframes backgroundAnimation {
@@ -22,6 +27,6 @@ body {
     }
 
     to {
-        background-position-x: 100%;
+        background-position-x: 500px;
     }
 }

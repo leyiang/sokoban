@@ -13,6 +13,7 @@ export default class Game {
         this.row = this.map.length;
         this.col = this.map[0].length;
         this.boxes = new Map();
+        this.box_len = 0;
     }
 
     update() {
@@ -33,6 +34,7 @@ export default class Game {
             row.forEach( (type, x) => {
                 if( type === Cell.CARGO || type === Cell.CARGO_ON_TARGET ) {
                     const box = new Box(x, y);
+                    this.box_len ++;
                     this.boxes.set(box.key, box);
                 }
             });
@@ -67,7 +69,6 @@ export default class Game {
             if( box === null ) {
                 return true;
             } else {
-
                 if( this.validPosition(box.x + xDir, box.y + yDir, xDir, yDir, true) ) {
                     this.moveBox( box, xDir, yDir );
                 } else {
